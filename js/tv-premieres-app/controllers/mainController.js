@@ -3,6 +3,7 @@ app.controller("mainController", function($scope, $http){
     $scope.apiKey = "6a1a55e9adb9540b0eda86f232ead029";
     //storing episodes and their associated data
     $scope.results =[];
+    $scope.filterText = null;
     $scope.init = function() {
     	//a start date for the api
     	var today = new Date();
