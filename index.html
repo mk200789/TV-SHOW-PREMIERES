@@ -59,7 +59,7 @@
 	            				<li><strong>On Air: </strong> {{tvshow.show.air_day}} {{tvshow.show.air_time}}</li>
 	            				<li><strong>Network: </strong> {{tvshow.show.network}}</li>
 	            				<li><strong>Season #: </strong> {{tvshow.episode.season}}</li>
-	            				<li><strong>Genres: </strong><span class =" label label-inverse genre" ng-repeat="genre in tvshow.show.genres">{{genre}}</span></li>
+	            				<li><strong>Genres: </strong><span class =" label label-inverse genre" ng-repeat="genre in tvshow.show.genres" ng-click="setGenreFilter(genre)">{{genre}}</span></li>
 	            			</ul>
 	            		</div>
 
