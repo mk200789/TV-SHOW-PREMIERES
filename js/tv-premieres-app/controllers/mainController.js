@@ -6,8 +6,22 @@ app.controller("mainController", function($scope, $http){
     $scope.filterText = null;
     $scope.availableGenres =[];
     $scope.genreFilter = null;
+    $scope.orderFields = ["Air Date" , "Rating"];
+    $scope.orderDirections = ["Descending" , "Ascending"];
+    $scope.orderField = "Air Date";
+    $scope.orderReverse = false;
     $scope.setGenreFilter = function(genre){
         $scope.genreFilter = genre;
+    };
+    $scope.customOrder = function(tvshow){
+        switch($scope.orderField){
+            case "Air Date":
+                return tvshow.episode.first_aired;
+                break;
+            case "Rating":
+                return tvshow.episode.ratings.percentage;
+                break;
+        }
     };
     $scope.init = function() {
     	//a start date for the api
